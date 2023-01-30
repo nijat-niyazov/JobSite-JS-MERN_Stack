@@ -3,6 +3,7 @@ import logo from '../assets/images/logo.svg';
 import main from '../assets/images/main.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Wrapper from '../assets/wrappers/LandingPage';
+//
 
 const FirstPage = () => {
   return (
