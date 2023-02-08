@@ -1,23 +1,46 @@
-import FirstPage from './Pages/FirstPage';
-import styled from 'styled-components';
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Link,
+  Outlet,
+  Route,
+  RouterProvider,
+} from 'react-router-dom';
 
-const Button = styled.button`
-  background: red;
-  color: white;
-  font-size: 1rem;
-`;
-const AnotherButton = styled.button`
-  background: aqua;
-  color: black;
-  font-size: 1rem;
-`;
+import { Dashboard, Register, Error404, LandingPage } from './pages/exporter';
 
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="*" element={<Error404 />} />
+      </Route>
+    )
+  );
+
   return (
     <div className="App">
-      <FirstPage />
+      <RouterProvider router={router} />
     </div>
   );
 }
 
 export default App;
+
+const Root = () => {
+  return (
+    <>
+      <nav>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/landing">Landing</Link>
+      </nav>
+      <div>
+        <Outlet />
+      </div>
+    </>
+  );
+};

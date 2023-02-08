@@ -1,19 +1,17 @@
 import React from 'react';
-import logo from '../assets/images/logo.svg';
-import main from '../assets/images/main.svg';
+import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Wrapper from '../assets/wrappers/LandingPage';
-//
+import main from '../../assets/images/main.svg';
+import Wrapper from './landingStyle';
+import { Header } from '../../components/exporter';
 
-const FirstPage = () => {
+const LandingPage = () => {
   return (
     <Wrapper>
       <nav>
-        <LazyLoadImage src={logo} alt="logo" className="logo" />
-        <h4>Welcome to our site</h4>
+        <Header />
       </nav>
       <div className="container page">
-        {/* info */}
         <div className="info">
           <h1>
             Job <span>finding</span> site
@@ -25,13 +23,15 @@ const FirstPage = () => {
             an account, upload your resume, and start applying to the jobs
             you're interested in. Good luck on your job search journey!
           </p>
-          <button className="btn btn-hero">Login/Register</button>
+          <Link to="/register" className="btn btn-hero">
+            Login/Register
+          </Link>
         </div>
-        {/* main */}
+
         <LazyLoadImage src={main} alt="main" className="img main-img" />
       </div>
     </Wrapper>
   );
 };
 
-export default FirstPage;
+export default LandingPage;
