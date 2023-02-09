@@ -6,7 +6,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-
 import { Dashboard, Register, Error404, LandingPage } from './pages/exporter';
 
 function App() {
