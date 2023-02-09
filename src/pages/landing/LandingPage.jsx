@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import main from '../../assets/images/main.svg';
 import Wrapper from './landingStyle';
-import { Header } from '../../components/exporter';
+import { Logo } from '../../components/exporter';
 
 const LandingPage = () => {
   return (
     <Wrapper>
       <nav>
-        <Header />
+        <Logo />
       </nav>
       <div className="container page">
         <div className="info">
