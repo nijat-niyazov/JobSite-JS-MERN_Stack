@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 const Dashboard = () => {
-  return <div>Home</div>;
+  useEffect(() => {
+    const fetchdata = async () => {
+      try {
+        // const { data } = await axios.get('/data.json');
+
+        const { data } = await axios.get('/api/v1');
+        console.log(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchdata();
+  }, []);
+
+  return <div> dashboard </div>;
 };
 
 export default Dashboard;

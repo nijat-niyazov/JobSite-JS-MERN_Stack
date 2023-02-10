@@ -23,7 +23,6 @@ export default function Register() {
   };
 
   const changeHandler = e => {
-    console.log({ ...user }, e.target.value);
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
