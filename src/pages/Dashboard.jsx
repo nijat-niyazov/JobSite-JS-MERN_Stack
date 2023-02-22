@@ -5,8 +5,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        // const { data } = await axios.get('/data.json');
-
         const { data } = await axios.get('/api/v1');
         console.log(data);
       } catch (err) {

@@ -1,6 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import formReducer from './reducers/formReducer';
+// import alertReducer from './reducers/alert';
+// import userReducer from './reducers/user';
+import allStateReducer from './reducers/allStates';
 
 export const store = configureStore({
-  reducer: { form: formReducer },
+  reducer: {
+    all: allStateReducer,
+  },
 });
